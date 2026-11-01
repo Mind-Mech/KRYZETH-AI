@@ -24,7 +24,6 @@ import time
 from pathlib import Path
 
 import numpy as np
-import sounddevice as sd
 from groq import Groq
 from scipy.io.wavfile import write as write_wav
 
@@ -86,6 +85,14 @@ class SpeechRecognizer:
 
         A value of None means wait indefinitely.
         """
+
+        try:
+            import sounddevice as sd
+        except (ImportError, OSError) as exc:
+            raise RuntimeError(
+                "Microphone capture requires the PortAudio runtime and sounddevice. "
+                "Install the platform audio dependencies and retry."
+            ) from exc
 
         logger.info(
             "Listening for speech... timeout=%s",
