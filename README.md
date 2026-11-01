@@ -16,6 +16,8 @@ KRYZETH is an independent, experimental Python voice-assistant project. The goal
 
 ## Repository notes
 
+- The separate experimental Engineering Workbench from the development archive is not part of this first public source snapshot. It is being held back for a separate functionality, dependency, and security review.
+
 - `wakeword_training/hey_kryzeth.yml` is a training configuration only. It does not include training recordings, background-noise datasets, validation features, or a trained KRYZETH wake-word model. Those resources must be obtained and prepared separately.
 - `software/voice/wakeword_training/` contains documentation and an optional user-specific verifier training helper. Any recordings added for training must remain private and must not be committed.
 - `Modelfile` is an optional Ollama model configuration. It references a model tag that must already be available to Ollama; model weights are not included.
