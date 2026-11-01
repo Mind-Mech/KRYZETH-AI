@@ -1,0 +1,53 @@
+name: Offline tests
+
+on:
+  push:
+    branches:
+      - main
+      - "chore/**"
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  offline-tests:
+    name: Python offline tests
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-test.txt
+
+      - name: Compile Python source
+        run: python -m compileall -q software run_voice.py
+
+      - name: Run memory tests
+        run: python -m software.memory.tests
+
+      - name: Run AI and memory integration tests
+        run: python -m software.test_brain_memory
+
+      - name: Run speaker-profile test
+        run: python -m software.voice.test_speaker_verification
+
+      - name: Run voice-state test
+        run: python -m software.voice.test_voice_state
+
+      - name: Run wake-word configuration test
+        run: python -m software.voice.test_wakeword_config

@@ -4,10 +4,13 @@ import os
 
 from software.voice.normalizer import TextNormalizer
 from software.voice.wakeword import WakeWordDetector
+from software.utils import config
 
 
 def main() -> None:
     assert TextNormalizer().normalize("Hey, KRY-ZETH!!!") == "hey kry zeth"
+    assert config.VOICE_WAKEWORD_MODEL_PATH == ""
+    assert config.VOICE_WAKEWORD_MODEL_NAME == "hey_jarvis_v0.1"
 
     os.environ.pop("KRYZETH_TEST_UNUSED", None)
 

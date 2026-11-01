@@ -23,6 +23,10 @@ KRYZETH is an independent, experimental Python voice-assistant project. The goal
 - `Modelfile` is an optional Ollama model configuration. It references a model tag that must already be available to Ollama; model weights are not included.
 - `software/main.py` is a compatibility entry point. The recommended launcher is `run_voice.py` in the repository root.
 
+## Installation
+
+For a step-by-step Windows setup, see [docs/INSTALL_WINDOWS.md](docs/INSTALL_WINDOWS.md).
+
 ## Quick start
 
 Use Python 3.11 or newer. Audio-device drivers and platform-specific PyTorch/SpeechBrain wheels may require additional setup.
