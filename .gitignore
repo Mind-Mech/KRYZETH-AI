@@ -1,0 +1,67 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build and packaging output
+build/
+dist/
+*.egg-info/
+*.zip
+
+# Local runtime output (root-level only)
+/logs/
+/memory/
+/data/
+/wakeword_data/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.backup
+
+# User data, voice identity, and recordings
+data/voice_auth/
+data/user_data/
+data/personal/
+wakeword_data/
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.ogg
+
+# Downloaded model weights / caches
+/assets/models/
+/data/models/
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.safetensors
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Editors / operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
