@@ -8,7 +8,6 @@ from pathlib import Path
 from typing import Optional
 
 import numpy as np
-import sounddevice as sd
 from scipy.io.wavfile import write as write_wav
 
 from software.utils import config
@@ -72,6 +71,14 @@ class AudioRecorder:
         recording: list[np.ndarray] = []
         started = False
         silent_count = 0
+
+        try:
+            import sounddevice as sd
+        except (ImportError, OSError) as exc:
+            raise RuntimeError(
+                "Microphone capture requires the PortAudio runtime and sounddevice. "
+                "Install the platform audio dependencies and retry."
+            ) from exc
 
         logger.info("Microphone capture started.")
 

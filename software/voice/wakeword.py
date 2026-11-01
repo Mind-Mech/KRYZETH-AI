@@ -22,7 +22,6 @@ from collections import deque
 from pathlib import Path
 
 import numpy as np
-import sounddevice as sd
 
 from software.utils import config
 from software.utils.logger import logger
@@ -176,6 +175,14 @@ class WakeWordDetector:
 
         if self.mode != "custom":
             raise WakeWordError(f"Unsupported wake-word mode: {self.mode}")
+
+        try:
+            import sounddevice as sd
+        except (ImportError, OSError) as exc:
+            raise WakeWordError(
+                "Microphone capture requires the PortAudio runtime and sounddevice. "
+                "Install the platform audio dependencies and retry."
+            ) from exc
 
         model = self._load_oww()
         recorder = AudioRecorder(
