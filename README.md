@@ -40,7 +40,7 @@ Use Python 3.11 or newer. Audio-device drivers and platform-specific PyTorch/Spe
 5. Run from the repository root:
 
    ```bash
-   python run_voice.py
+   python -m software.main
    ```
 
 A working microphone and speaker, valid provider credentials, network access, and required wake-word / speaker models are needed. Model files and personal voice profiles are not bundled.
