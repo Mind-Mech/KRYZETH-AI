@@ -1,5 +1,5 @@
 """
-VIZETH Configuration
+KRYZETH Configuration
 Version: Mk I
 """
 
