@@ -7,13 +7,19 @@ KRYZETH is an independent, experimental Python voice-assistant project. The goal
 ## Current project components
 
 - Python voice pipeline coordinated by `software/voice/manager.py`.
-- Wake-word detection through `openWakeWord` (the current configuration defaults to the phrase `Hey Jarvis`).
+- Wake-word detection through `openWakeWord`. The current runtime configuration defaults to the phrase `Hey Jarvis`; a separate `Hey KRYZETH` training configuration is included as a starting point.
 - Speaker verification using SpeechBrain ECAPA embeddings. Voice profiles and enrollment recordings are generated locally and must remain private.
 - Speech recognition through the Groq API. Audio is sent to the configured cloud provider for transcription.
 - Text-to-speech through the Fish Audio API.
 - AI provider adapters for Groq, OpenRouter, and Ollama. Availability depends on configuration and installed packages.
 - A JSON-based memory subsystem. User memory is runtime data and must not be committed.
-- An experimental browser-based 3D Engineering Workbench under `software/workbench/`; it is a separate development area and is not yet wired into the voice assistant.
+
+## Repository notes
+
+- `wakeword_training/hey_kryzeth.yml` is a training configuration only. It does not include training recordings, background-noise datasets, validation features, or a trained KRYZETH wake-word model. Those resources must be obtained and prepared separately.
+- `software/voice/wakeword_training/` contains documentation and an optional user-specific verifier training helper. Any recordings added for training must remain private and must not be committed.
+- `Modelfile` is an optional Ollama model configuration. It references a model tag that must already be available to Ollama; model weights are not included.
+- `software/main.py` is a compatibility entry point. The recommended launcher is `run_voice.py` in the repository root.
 
 ## Quick start
 
