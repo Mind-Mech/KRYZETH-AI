@@ -1,0 +1,15 @@
+# Core KRYZETH voice assistant and AI-provider dependencies
+python-dotenv>=1.0
+groq>=0.15
+openai>=1.0
+ollama>=0.3
+fish-audio-sdk>=1.0
+numpy>=1.26
+scipy>=1.11
+sounddevice>=0.4
+soundfile>=0.12
+openwakeword>=0.6
+onnxruntime>=1.17
+speechbrain>=1.0
+torch>=2.2
+torchaudio>=2.2
