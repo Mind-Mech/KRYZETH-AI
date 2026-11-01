@@ -48,3 +48,6 @@ jobs:
 
       - name: Run voice-state test
         run: python -m software.voice.test_voice_state
+
+      - name: Run wake-word configuration test
+        run: python -m software.voice.test_wakeword_config
