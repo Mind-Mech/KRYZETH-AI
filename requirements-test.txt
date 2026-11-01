@@ -1,0 +1,3 @@
+# Minimal dependencies required by the offline unit-test suite.
+# Install with: python -m pip install -r requirements-test.txt
+python-dotenv>=1.0
