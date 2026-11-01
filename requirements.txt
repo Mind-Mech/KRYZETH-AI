@@ -1,5 +1,6 @@
 # Core KRYZETH voice assistant and AI-provider dependencies
 python-dotenv>=1.0
+requests>=2.31
 groq>=0.15
 openai>=1.0
 ollama>=0.3
