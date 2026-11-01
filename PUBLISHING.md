@@ -1,6 +1,6 @@
 # Publishing KRYZETH AI from Windows
 
-The GitHub repository is `Mind-Mech/KRYZETH-AI`.
+The GitHub repository is `https://github.com/Mind-Mech/KRYZETH-AI`.
 
 ## 1. Rotate credentials first
 
@@ -8,52 +8,55 @@ The original project archive contained a local `.env` file with API credentials.
 
 ## 2. Extract the cleaned source snapshot
 
-Download the cleaned `KRYZETH-AI-public-review.zip` supplied with this project preparation and extract it into a new folder. Keep your original project folder and original ZIP untouched.
+Download `KRYZETH-AI-public-review.zip` supplied with the project preparation and extract it to a temporary folder. Keep your original project folder and original ZIP untouched.
 
-## 3. Push the cleaned project from Windows
+## 3. Clone the existing repository
 
-Open PowerShell in the extracted `KRYZETH-AI-public-review` folder.
-
-Check Git is installed:
+Open PowerShell in the folder where you keep projects:
 
 ```powershell
-git --version
+git clone https://github.com/Mind-Mech/KRYZETH-AI.git
 ```
 
-Then verify and push:
+Copy the **contents** of the extracted `KRYZETH-AI-public-review` folder into the new `KRYZETH-AI` folder. Allow cleaned files with matching names to replace the initial documentation.
+
+For example, if both folders are in the current directory:
 
 ```powershell
-git init -b main
-git add .
+Copy-Item -Path ".\\KRYZETH-AI-public-review\\*" -Destination ".\\KRYZETH-AI\\" -Recurse -Force
+Set-Location .\\KRYZETH-AI
+```
+
+Do not copy the ZIP archive itself into the repository.
+
+## 4. Review and push
+
+Inspect the changed files:
+
+```powershell
+git status --short
+git diff --stat
+```
+
+Before staging, make sure the copied contents do not include `.env`, personal memory JSON, voice recordings, voice profiles, logs, downloaded model weights, or unrelated private data.
+
+Then stage, review, commit, and push:
+
+```powershell
+git add -A
 git status --short
 git diff --cached --stat
-```
-
-Before committing, inspect the staged files. They must not contain `.env`, personal memory JSON, voice recordings, voice profiles, logs, downloaded model weights, or unrelated private data.
-
-If the staged list is clean:
-
-```powershell
 git commit -m "Add cleaned KRYZETH AI source"
-git remote add origin https://github.com/Mind-Mech/KRYZETH-AI.git
-git push -u origin main
+git push origin main
 ```
 
 Use GitHub's normal browser sign-in / credential manager flow if Git requests authentication. Do not place an access token in the remote URL or commit history.
 
-If the remote already contains documentation commits, first fetch and integrate them rather than force-pushing:
-
-```powershell
-git fetch origin
-git pull --rebase origin main
-git push -u origin main
-```
-
-## 4. Add a license only after checking ownership
+## 5. Add a license only after checking ownership
 
 This repository intentionally has no `LICENSE` yet. Confirm that all included code and assets can legally be distributed under the chosen license before adding one. A public GitHub repository is not automatically open source.
 
-## 5. Verify the published repository
+## 6. Verify the published repository
 
 - The README renders correctly.
 - The repository contains the expected source folders.
