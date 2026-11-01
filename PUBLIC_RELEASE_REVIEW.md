@@ -1,10 +1,10 @@
 # Public Release Review
 
-This release package was prepared from the supplied project ZIP. The original archive was not modified.
+This copy was prepared from the supplied project ZIP. The original archive was not modified.
 
-## Excluded from the public source snapshot
+## Excluded from this copy
 
-- `.env` files and detected credential values.
+- `.env` files and all detected credential values.
 - User memory JSON, voice profile JSON, and voice enrollment / wake-word recordings.
 - Runtime logs and temporary files.
 - Downloaded speaker-model checkpoint files.
@@ -18,20 +18,22 @@ This release package was prepared from the supplied project ZIP. The original ar
 - Added a root README, `.env.example`, `.gitignore`, and contribution guidance.
 - Replaced the hard-coded Fish Audio voice reference identifier with the optional `FISH_REFERENCE_ID` environment variable.
 - Replaced personal-name strings in retained synthetic examples with generic test data.
-- Updated voice subsystem documentation and dependency list to reflect the current Groq STT and Fish Audio TTS adapters.
+- Updated the voice subsystem README and dependency list to reflect the current Groq STT and Fish Audio TTS adapters.
 
-## Verification performed on the cleaned snapshot
+## Verification performed
 
 - All 50 included Python files passed syntax compilation.
-- The memory tests and mocked Brain/memory integration tests passed.
-- Selected speaker-verification and voice-state tests passed.
-- A second scan found no matches for the credential formats checked; no `.env`, user-memory, voice-profile, recording, model-checkpoint, or log files remain in the prepared package.
+- `python -m software.memory.tests` passed all 8 included memory tests.
+- `python -m software.test_brain_memory` passed all 4 mocked Brain/memory integration tests.
+- `python -m software.voice.test_speaker_verification` passed.
+- `python -m software.voice.test_voice_state` passed.
+- A second scan of the cleaned copy found no matches for the credential formats checked; no `.env`, user-memory, voice-profile, voice-recording, model-checkpoint, or log files remain in the package.
 
-The cleaned copy also includes code corrections needed to run without personal runtime data. These changes were validated by the selected offline tests.
+The cleaned copy also includes code corrections needed to run without personal runtime data: a missing default user profile now behaves as an empty profile, the profile class exposes the compatibility methods used by MemoryManager, Brain supports dependency injection, and Brain uses the shared memory policy when saving. These changes were validated by the tests above.
 
 ## Verification limits
 
-This is not a complete manual source-code audit, live API test, microphone test, model-download test, browser test of the Workbench, dependency installation test on Windows, or guarantee that no unknown secret format exists. Review the full staged file list before the first push.
+This is not a complete manual source-code audit, live API test, microphone test, model-download test, browser test of the Workbench, dependency installation test on Windows, or guarantee that no unknown secret format exists. Review the whole repository and staged file list before the first push.
 
 ## Before publishing
 

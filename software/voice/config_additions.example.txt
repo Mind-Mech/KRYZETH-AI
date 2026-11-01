@@ -1,0 +1,30 @@
+# Current runtime: bundled openWakeWord "Hey Jarvis".
+# Later, swap only the model settings + WAKE_WORD for Hey KRYZETH.
+
+VOICE_WAKEWORD_MODE = "custom"
+VOICE_WAKEWORD_MODEL_NAME = "hey_jarvis_v0.1"
+VOICE_WAKEWORD_MODEL_PATH = ""
+VOICE_WAKEWORD_THRESHOLD = 0.50
+VOICE_WAKEWORD_REQUIRED_HITS = 1
+VOICE_WAKEWORD_HIT_WINDOW_SECONDS = 0.50
+
+VOICE_AUTH_PROFILE_PATH = "data/voice_auth/profile.json"
+VOICE_AUTH_MODEL = "speechbrain/spkrec-ecapa-voxceleb"
+VOICE_AUTH_MODEL_CACHE = "data/models/spkrec-ecapa-voxceleb"
+VOICE_VERIFY_EVERY_TURN = True
+
+VOICE_SILENCE_SECONDS = 0.9
+VOICE_MAX_UTTERANCE_SECONDS = 8.0
+VOICE_PRE_ROLL_SECONDS = 1.6
+VOICE_START_THRESHOLD = 0.015
+VOICE_REJECTION_MESSAGE = ""
+
+STT_SILENCE_THRESHOLD = 0.015
+STT_CHUNK_SECONDS = 0.08
+
+WAKE_WORD = "hey jarvis"
+
+# Future custom model:
+# VOICE_WAKEWORD_MODEL_NAME = ""
+# VOICE_WAKEWORD_MODEL_PATH = "data/voice/wakeword/hey_kryzeth.onnx"
+# WAKE_WORD = "hey kryzeth"

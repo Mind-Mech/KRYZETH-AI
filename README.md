@@ -2,7 +2,7 @@
 
 KRYZETH is an independent, experimental Python voice-assistant project. The goal is to explore a modular personal assistant that combines speech interaction, language-model providers, and locally stored, user-controlled memory.
 
-> **Status: experimental / in active development.** This repository is not production-ready. The complete cleaned source snapshot is being added separately; see the repository files for the release package.
+> **Status: experimental / in active development.** This repository is not production-ready. Some modules are optional or experimental, and the full application has not been validated on a fresh machine.
 
 ## Current project components
 
@@ -19,18 +19,17 @@ KRYZETH is an independent, experimental Python voice-assistant project. The goal
 
 Use Python 3.11 or newer. Audio-device drivers and platform-specific PyTorch/SpeechBrain wheels may require additional setup.
 
-1. Obtain and extract the cleaned source snapshot.
-2. Open a terminal in the extracted project folder.
-3. Create and activate a virtual environment.
-4. Install dependencies:
+1. Clone the repository and enter its root directory.
+2. Create and activate a virtual environment.
+3. Install dependencies:
 
    ```bash
    python -m pip install --upgrade pip
    pip install -r requirements.txt
    ```
 
-5. Copy `.env.example` to `.env` and add your own provider credentials. Never commit `.env`.
-6. Run from the repository root:
+4. Copy `.env.example` to `.env` and add your own provider credentials. Never commit `.env`.
+5. Run from the repository root:
 
    ```bash
    python run_voice.py

@@ -1,2 +1,6 @@
-# Optional dependencies for experimental vision features.
-# Review platform-specific installation instructions before installing.
+# Optional dependencies for vision and the Engineering Workbench hand controller
+-r requirements.txt
+opencv-python
+mediapipe
+pyautogui
+requests

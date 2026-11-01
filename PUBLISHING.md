@@ -8,7 +8,7 @@ The original project archive contained a local `.env` file with API credentials.
 
 ## 2. Extract the cleaned source snapshot
 
-Download `KRYZETH-AI-public-review.zip` supplied with the project preparation and extract it to a temporary folder. Keep your original project folder and original ZIP untouched.
+Download `KRYZETH-AI-public-review.zip` from the project owner's release-preparation conversation and extract it to a temporary folder. Keep the original project folder and original ZIP untouched.
 
 ## 3. Clone the existing repository
 
@@ -18,16 +18,14 @@ Open PowerShell in the folder where you keep projects:
 git clone https://github.com/Mind-Mech/KRYZETH-AI.git
 ```
 
-Copy the **contents** of the extracted `KRYZETH-AI-public-review` folder into the new `KRYZETH-AI` folder. Allow cleaned files with matching names to replace the initial documentation.
+Copy the **contents** of the extracted `KRYZETH-AI-public-review` folder into the newly cloned `KRYZETH-AI` folder. Allow the cleaned `README.md`, `.gitignore`, and other release-preparation files to replace the initial documentation where names match. Do not copy the ZIP archive itself into the repository.
 
 For example, if both folders are in the current directory:
 
 ```powershell
-Copy-Item -Path ".\\KRYZETH-AI-public-review\\*" -Destination ".\\KRYZETH-AI\\" -Recurse -Force
-Set-Location .\\KRYZETH-AI
+Copy-Item -Path ".\KRYZETH-AI-public-review\*" -Destination ".\KRYZETH-AI\" -Recurse -Force
+Set-Location .\KRYZETH-AI
 ```
-
-Do not copy the ZIP archive itself into the repository.
 
 ## 4. Review and push
 

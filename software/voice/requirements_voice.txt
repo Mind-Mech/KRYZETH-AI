@@ -1,0 +1,13 @@
+# Voice subsystem dependencies. The root requirements.txt includes these.
+python-dotenv
+numpy
+scipy
+sounddevice
+soundfile
+groq
+fish-audio-sdk
+openwakeword
+onnxruntime
+speechbrain
+torch
+torchaudio

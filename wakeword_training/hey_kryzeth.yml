@@ -1,0 +1,49 @@
+﻿model_name: "hey_kryzeth"
+
+target_phrase:
+- "hey kryzeth"
+
+custom_negative_phrases:
+- "hey jarvis"
+- "hey siri"
+- "okay google"
+- "hello kryzeth"
+- "hey kris"
+- "hey christ"
+
+n_samples: 10000
+n_samples_val: 2000
+
+tts_batch_size: 25
+augmentation_batch_size: 8
+
+piper_sample_generator_path: "./piper-sample-generator"
+
+output_dir: "./output"
+
+rir_paths:
+- "./mit_rirs"
+
+background_paths:
+- "./background_clips"
+
+background_paths_duplication_rate:
+- 1
+
+false_positive_validation_data_path: "./validation_set_features.npy"
+
+augmentation_rounds: 1
+
+feature_data_files: {}
+
+batch_n_per_class:
+  adversarial_negative: 50
+  positive: 50
+
+model_type: "dnn"
+layer_size: 32
+
+steps: 50000
+
+max_negative_weight: 1500
+target_false_positives_per_hour: 0.2

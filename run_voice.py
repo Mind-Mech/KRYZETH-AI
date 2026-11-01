@@ -1,6 +1,8 @@
-"""Run the KRYZETH voice assistant from the repository root."""
+from software.voice.manager import VoiceManager
 
-from software.main import main
+
+def main() -> None:
+    VoiceManager().run()
 
 
 if __name__ == "__main__":

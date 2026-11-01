@@ -1,0 +1,18 @@
+# Starting point for a custom "Hey KRYZETH" openWakeWord model.
+# Validate this against the exact openWakeWord training version you install.
+model_name: "hey_kryzeth"
+target_phrase:
+  - "hey kryzeth"
+custom_negative_phrases:
+  - "hey jarvis"
+  - "hey siri"
+  - "okay google"
+  - "hello kryzeth"
+  - "hey kris"
+  - "hey christ"
+n_samples: 20000
+n_samples_val: 2000
+tts_batch_size: 50
+augmentation_batch_size: 16
+augmentation_rounds: 1
+output_dir: "./hey_kryzeth_custom_model"
