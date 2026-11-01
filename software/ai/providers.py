@@ -1,7 +1,7 @@
 """
 software/ai/providers.py
 
-AI provider integrations for the VIZETH Mk I assistant.
+AI provider integrations for the KRYZETH assistant.
 
 This module is responsible ONLY for communicating with external AI
 providers. It has no knowledge of Brain, voice, vision, wake words,
@@ -48,7 +48,7 @@ class OllamaProvider(object):
 
     OllamaProvider's sole responsibility is talking to an Ollama model
     and returning its generated text. It contains no reasoning logic of
-    its own and no knowledge of any other VIZETH subsystem. Brain never
+    its own and no knowledge of any other KRYZETH subsystem. Brain never
     talks to Ollama directly -- only this class does.
 
     The model name and temperature used for generation are read from
