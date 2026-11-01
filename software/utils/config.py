@@ -115,7 +115,7 @@ MEMORY_TRACK_ACCESS = False
 
 CONVERSATION_TIMEOUT = 20
 VOICE_WAKEWORD_MODE = "custom"
-VOICE_WAKEWORD_MODEL_PATH = r".venv\Lib\site-packages\openwakeword\resources\models\hey_jarvis_v0.1.onnx"
+VOICE_WAKEWORD_MODEL_PATH = ""  # Use the model name managed by openWakeWord.
 VOICE_WAKEWORD_THRESHOLD = 0.50
 VOICE_AUTH_PROFILE_PATH = "data/voice_auth/profile.json"
 VOICE_AUTH_MODEL = "speechbrain/spkrec-ecapa-voxceleb"
