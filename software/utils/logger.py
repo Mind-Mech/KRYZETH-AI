@@ -1,5 +1,5 @@
 """
-VIZETH Logging System
+KRYZETH Logging System
 """
 
 import logging
@@ -10,7 +10,7 @@ from software.utils.config import LOGS, LOG_LEVEL
 LOGS.mkdir(parents=True, exist_ok=True)
 
 # Log file
-LOG_FILE = LOGS / "vizeth.log"
+LOG_FILE = LOGS / "kryzeth.log"
 
 # Configure logger
 logging.basicConfig(
@@ -23,4 +23,4 @@ logging.basicConfig(
     ]
 )
 
-logger = logging.getLogger("VIZETH")
+logger = logging.getLogger("KRYZETH")
