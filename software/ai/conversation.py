@@ -1,7 +1,7 @@
 """
 software/ai/conversation.py
 
-Conversation flow orchestration for the VIZETH Mk I assistant.
+Conversation flow orchestration for the KRYZETH assistant.
 
 ConversationManager is responsible ONLY for managing the flow of a
 conversation: taking a user message, sending it (together with a
