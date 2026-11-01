@@ -31,6 +31,10 @@ This copy was prepared from the supplied project ZIP. The original archive was n
 
 The cleaned copy also includes code corrections needed to run without personal runtime data: a missing default user profile now behaves as an empty profile, the profile class exposes the compatibility methods used by MemoryManager, Brain supports dependency injection, and Brain uses the shared memory policy when saving. These changes were validated by the tests above.
 
+## Public repository scope
+
+The first GitHub source snapshot contains the selected Python assistant, voice, AI-provider, memory, and configuration files. The separate experimental Engineering Workbench directory from the development archive was not uploaded in this snapshot and should be reviewed independently before publication. The root wake-word YAML is a configuration only, not private training audio or a trained model.
+
 ## Verification limits
 
 This is not a complete manual source-code audit, live API test, microphone test, model-download test, browser test of the Workbench, dependency installation test on Windows, or guarantee that no unknown secret format exists. Review the whole repository and staged file list before the first push.
